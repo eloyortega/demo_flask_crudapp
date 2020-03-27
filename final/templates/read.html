@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Genre</th>
+        <th>Actions</th>
+    </tr>
+    {% for x in range(l) %}
+        <tr>
+            <td>{{x+1}}</td>
+            <td><b>{{data[x].nm}}</b></td>
+            <td>{{data[x].genre}}</td>
+            <td>
+                <a href="update?{{x}}">edit</a>
+                <a href="delete?{{x}}">delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<form method="post" action="update">
+    <label>Name<br>
+        <input type="text" name="nm" value="{{data.nm}}">
+    </label><br>
+    <p>Genre</p>
+    <label>
+        <input type="radio" name="genre" value="Rock" {% if data.genre == 'Rock' %} checked {% endif %} > Rock and Roll
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="genre" value="Hip-Hop" {% if data.genre == 'Hip-Hop' %} checked {% endif %} > Hip-Hop
+    </label>
+    <br>
+    <label>
+        <input type="radio" name="genre" value="Salsa" {% if data.genre == 'Salsa' %} checked {% endif %} > Salsa
+    </label>
+    <br>
+    <input type="hidden" name="id" value="{{id}}">
+    <input type="submit" value="post">
+</form>
+{% endblock %}
